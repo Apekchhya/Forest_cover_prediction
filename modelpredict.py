@@ -3,6 +3,7 @@ from File_Operations import file_methods
 from Data_Preprocessing import preprocessing, clustering
 from Data_Loading import prediction_data_loader
 from App_Logging import logger
+import os
 
 class Prediction:
     def __init__(self,path):
@@ -52,9 +53,16 @@ class Prediction:
                         result.append('Cottonwood_Willow')
 
                 result = pd.DataFrame(result, columns = ['Prediction'])
-                path = 'prediction_output/prediction.csv'
-                result.to_csv(path, header=True, mode='a+')
-                self.write_log.log(self.file_obj,'End of Prediction')
+                path = 'prediction_output'
+                if len(os.listdir(path)) == 0:
+                    result.to_csv(path + '/prediction.csv', header=True, mode='a+')
+                    self.write_log.log(self.file_obj,'End of Prediction')
+
+                else:
+                    for files in os.listdir(path):
+                        os.remove(path+'/'+files)
+                        result.to_csv(path + '/prediction.csv', header=True, mode='a+')
+                        self.write_log.log(self.file_obj,'End of Prediction')
 
         except Exception as e:
             self.write_log.log(self.file_obj,'Error occured while running prediction.Error message: '+str(e))
