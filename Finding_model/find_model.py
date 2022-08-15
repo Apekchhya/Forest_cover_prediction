@@ -14,17 +14,10 @@ class Find_Model:
         self.log_obj.log(self.file_obj,'Entered get_best_params_for_ran_forest method of Find_Model class')
         try:
             self.param_grid = {
-                # 'n_estimators':[10,50,100,130],
-                # 'criterion': ['gini', 'entropy'],
+                'n_estimators':[10,50,100,130],
+                'criterion': ['gini', 'entropy'],
                 # # 'max_depth': range(2,4,1),
-                # 'max_features':['auto','kig2']
-
-
-                'n_estimators':[10],
-                'criterion': ['gini'],
-                # 'max_depth': range(2,4,1),
-                'max_features':['auto']
-            
+                'max_features':['auto','kig2']       
             }
 
             self.grid = GridSearchCV(estimator = self.ran_clf, param_grid= self.param_grid, cv=5, verbose=3,n_jobs=-1)
@@ -55,13 +48,10 @@ class Find_Model:
             # initializing with different combination of parameters
             self.param_grid_xgboost = {
 
-                # 'learning_rate': [0.5, 0.1, 0.01, 0.001],
-                # 'max_depth': [3, 5, 10, 20],
-                # 'n_estimators': [10, 50, 100, 200]
+                'learning_rate': [0.5, 0.1, 0.01, 0.001],
+                'max_depth': [3, 5, 10, 20],
+                'n_estimators': [10, 50, 100, 200]
 
-                'learning_rate': [0.5],
-                'max_depth': [ 20],
-                'n_estimators': [10]
             }
             # Creating an object of the Grid Search class
             self.grid= GridSearchCV(XGBClassifier(objective='multi:softprob'),self.param_grid_xgboost, verbose=3,cv=5,n_jobs=-1)
@@ -98,26 +88,25 @@ class Find_Model:
         # create best model for XGBoost
         try:
             self.xgboost= self.get_best_params_for_xgboost(train_x,train_y)
-            # we will using predict_proba in case of a multiclass classification as roc_auc_score needs predict_proba to calculate the score
-            self.prediction_xgboost = self.xgboost.predict_proba(test_x) # Predictions using the XGBoost Model
+
+            self.prediction_xgboost = self.xgboost.predict_proba(test_x) 
 
             if len(test_y.unique()) == 1: #if there is only one label in y, then roc_auc_score returns error. We will use accuracy in that case
                 self.xgboost_score = accuracy_score(test_y, self.prediction_xgboost)
-                self.log_obj.log(self.file_obj, 'Accuracy for XGBoost:' + str(self.xgboost_score))  # Log AUC
+                self.log_obj.log(self.file_obj, 'Accuracy for XGBoost:' + str(self.xgboost_score)) 
             else:
-                self.xgboost_score = roc_auc_score(test_y, self.prediction_xgboost, multi_class='ovr') # AUC for XGBoost
-                self.log_obj.log(self.file_obj, 'AUC for XGBoost:' + str(self.xgboost_score)) # Log AUC
+                self.xgboost_score = roc_auc_score(test_y, self.prediction_xgboost, multi_class='ovr') 
+                self.log_obj.log(self.file_obj, 'AUC for XGBoost:' + str(self.xgboost_score))
 
             # create best model for Random Forest
             self.random_forest=self.get_best_params_for_ran_forest(train_x,train_y)
-            # we will using predict_proba in case of a multiclass classification as roc_auc_score needs predict_proba to calculate the score
-            self.prediction_random_forest=self.random_forest.predict_proba(test_x) # prediction using the Random Forest Algorithm
+            self.prediction_random_forest=self.random_forest.predict_proba(test_x) 
 
-            if len(test_y.unique()) == 1:#if there is only one label in y, then roc_auc_score returns error. We will use accuracy in that case
+            if len(test_y.unique()) == 1:
                 self.random_forest_score = accuracy_score(test_y,self.prediction_random_forest)
                 self.log_obj.log(self.file_obj, 'Accuracy for RF:' + str(self.random_forest_score))
             else:
-                self.random_forest_score = roc_auc_score(test_y, self.prediction_random_forest,multi_class='ovr') # AUC for Random Forest
+                self.random_forest_score = roc_auc_score(test_y, self.prediction_random_forest,multi_class='ovr') 
                 self.log_obj.log(self.file_obj, 'AUC for RF:' + str(self.random_forest_score))
 
             #comparing the two models

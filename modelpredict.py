@@ -13,7 +13,6 @@ class Prediction:
 
     def predict(self):
         try:
-            #write code for deleting existing prediction data
             self.write_log.log(self.file_obj,'Prediction started')
             getting_data = prediction_data_loader.Pred_Data_Getter(self.file_obj, self.write_log)
             data = getting_data.get_data()

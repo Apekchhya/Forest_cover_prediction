@@ -72,6 +72,7 @@ def download():
 @app.route("/download/<filename>")
 def download_file(filename):
     return send_from_directory('prediction_output', filename)
+    # return redirect(url_for("upload_file"))
 
 
 
