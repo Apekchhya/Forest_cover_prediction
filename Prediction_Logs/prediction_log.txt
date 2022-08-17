@@ -187,3 +187,13 @@
 2022-08-15/16: 27: 41		Entered the load_model methond of File_Operation class
 2022-08-15/16: 27: 41		Model file XGBoost2loaded. Exited the load_model method of File_Operation class
 2022-08-15/16: 27: 41		End of Prediction
+2022-08-17/19: 55: 43		Prediction started
+2022-08-17/19: 55: 43		Entered the get data method of Pred Data Getter class
+2022-08-17/19: 55: 44		Data successfully loaded. Exited the get data method of Pred Data Getter class
+2022-08-17/19: 55: 44		Entered the load_model methond of File_Operation class
+2022-08-17/19: 55: 44		Model file KMeans_clusteringloaded. Exited the load_model method of File_Operation class
+2022-08-17/19: 55: 45		Entered the find_correct_model of class File_Operations
+2022-08-17/19: 55: 45		Exited the find_correct_model of class File_Operation with success
+2022-08-17/19: 55: 45		Entered the load_model methond of File_Operation class
+2022-08-17/19: 55: 45		Model file XGBoost0loaded. Exited the load_model method of File_Operation class
+2022-08-17/19: 55: 47		End of Prediction

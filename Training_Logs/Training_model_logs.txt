@@ -2,3 +2,40 @@
 2022-08-13/11: 58: 46		Entered the get data method of Data_Getter class
 2022-08-13/11: 58: 49		Data loaded successfully. Exited the get_data method of Data_Getter class
 2022-08-13/11: 59: 21		Model training unsuccessful
+2022-08-16/18: 56: 12		Training started
+2022-08-16/18: 56: 12		Entered the get data method of Data_Getter class
+2022-08-16/18: 56: 13		Data loaded successfully. Exited the get_data method of Data_Getter class
+2022-08-16/18: 59: 46		Entered the elbow_plot method of class Clustering
+2022-08-16/19: 03: 31		The optimum number of cluster is : 3. Exited the elbow_plot method of class Clustering
+2022-08-16/19: 03: 31		Entered the create_cluster method of class Clustering
+2022-08-16/19: 03: 41		Entered model_saving method of File_Operation class
+2022-08-16/19: 03: 41		Model FileKMeans_clustering saved. Exited the model_saving method of class File_Operation
+2022-08-16/19: 03: 42		Sucessfully created cluster. Exited create_cluster method of class Clustering
+2022-08-16/19: 03: 44		Entered the get_best_model method of the Find_Model class
+2022-08-16/19: 03: 44		Entered the get_best_params_for_xgboost of Find_Model class
+2022-08-17/07: 35: 16		XGBoost best params: {'learning_rate': 0.5, 'max_depth': 20, 'n_estimators': 200}. Exited the get_best_params_for_xgboost method of the Model_Finder class
+2022-08-17/07: 35: 20		AUC for XGBoost:0.9963066238360667
+2022-08-17/07: 35: 20		Entered get_best_params_for_ran_forest method of Find_Model class
+2022-08-17/07: 43: 04		Random Forest best params:{'criterion': 'gini', 'max_features': 'auto', 'n_estimators': 130}. Exited the get_best_params_for_random_forest method of the Find_Model class
+2022-08-17/07: 43: 07		AUC for RF:0.9952180872672644
+2022-08-17/07: 43: 07		Entered model_saving method of File_Operation class
+2022-08-17/07: 43: 08		Model FileXGBoost0 saved. Exited the model_saving method of class File_Operation
+2022-08-17/07: 43: 13		Entered the get_best_model method of the Find_Model class
+2022-08-17/07: 43: 13		Entered the get_best_params_for_xgboost of Find_Model class
+2022-08-17/15: 55: 38		XGBoost best params: {'learning_rate': 0.5, 'max_depth': 20, 'n_estimators': 200}. Exited the get_best_params_for_xgboost method of the Model_Finder class
+2022-08-17/15: 55: 42		AUC for XGBoost:0.993279465760952
+2022-08-17/15: 55: 42		Entered get_best_params_for_ran_forest method of Find_Model class
+2022-08-17/16: 01: 43		Random Forest best params:{'criterion': 'entropy', 'max_features': 'auto', 'n_estimators': 130}. Exited the get_best_params_for_random_forest method of the Find_Model class
+2022-08-17/16: 01: 46		AUC for RF:0.9909177102332346
+2022-08-17/16: 01: 48		Entered model_saving method of File_Operation class
+2022-08-17/16: 01: 48		Model FileXGBoost2 saved. Exited the model_saving method of class File_Operation
+2022-08-17/16: 01: 59		Entered the get_best_model method of the Find_Model class
+2022-08-17/16: 01: 59		Entered the get_best_params_for_xgboost of Find_Model class
+2022-08-17/19: 45: 19		XGBoost best params: {'learning_rate': 0.5, 'max_depth': 20, 'n_estimators': 200}. Exited the get_best_params_for_xgboost method of the Model_Finder class
+2022-08-17/19: 45: 20		AUC for XGBoost:0.9859568019716394
+2022-08-17/19: 45: 20		Entered get_best_params_for_ran_forest method of Find_Model class
+2022-08-17/19: 47: 51		Random Forest best params:{'criterion': 'gini', 'max_features': 'auto', 'n_estimators': 100}. Exited the get_best_params_for_random_forest method of the Find_Model class
+2022-08-17/19: 47: 52		AUC for RF:0.9830597932981008
+2022-08-17/19: 47: 53		Entered model_saving method of File_Operation class
+2022-08-17/19: 47: 54		Model FileXGBoost1 saved. Exited the model_saving method of class File_Operation
+2022-08-17/19: 47: 54		Successful end of Model Training

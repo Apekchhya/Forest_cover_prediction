@@ -17,7 +17,7 @@ class Find_Model:
                 'n_estimators':[10,50,100,130],
                 'criterion': ['gini', 'entropy'],
                 # # 'max_depth': range(2,4,1),
-                'max_features':['auto','kig2']       
+                'max_features':['auto','sqrt']       
             }
 
             self.grid = GridSearchCV(estimator = self.ran_clf, param_grid= self.param_grid, cv=5, verbose=3,n_jobs=-1)

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<title>Prediction</title>
+	<title>Forest Cover</title>
 </head>
 
 <style>
@@ -72,7 +72,7 @@
 <body>
 	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container-fluid">
-			<br/><center><b><h4 class="my-4 title">FOREST COVER CLASSIFICATION</h4></b></center><br/>
+			<br/><center><b><h4 class="my-4 title">FOREST COVER PREDICTION</h4></b></center><br/>
 
 		</div>
 	</nav>
@@ -86,13 +86,13 @@
 					<form method="post" id="datafetch_form" enctype="multipart/form-data">
 						<div class="form-group files color">
 							<input class = 'upload' type=file name=file><br>
-								<br><input class="form-control btn-primary" type=submit value=Upload>
+								<br><input class="form-control btn-primary" type=submit value="Upload a csv file">
 					</div>
 						<br/><center><b>Or</b></center><br/>
 						
-						<button class="form-control btn-primary mb-5" id="defaultfile" data-path = "Prediction_Batch_files">
+						<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYMAi-XgiEsBO56M6uQRbSwUcQkFxCqTbS7p9WLtb43LFWHcj_Bm6Z637egYPvzPIdESSxkxkUVGy9/pub?gid=951344322&single=true&output=csv" class="form-control btn-primary mb-5" id="defaultfile" >
 							Download Sample File
-						</button>
+						</a>
 					</form>
 				</div>
 			
