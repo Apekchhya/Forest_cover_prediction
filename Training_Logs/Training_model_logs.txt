@@ -1,7 +1,4 @@
-2022-08-13/11: 58: 46		Training started
-2022-08-13/11: 58: 46		Entered the get data method of Data_Getter class
-2022-08-13/11: 58: 49		Data loaded successfully. Exited the get_data method of Data_Getter class
-2022-08-13/11: 59: 21		Model training unsuccessful
+
 2022-08-16/18: 56: 12		Training started
 2022-08-16/18: 56: 12		Entered the get data method of Data_Getter class
 2022-08-16/18: 56: 13		Data loaded successfully. Exited the get_data method of Data_Getter class
